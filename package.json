@@ -1,0 +1,30 @@
+{
+  "name": "fortytonstocks",
+  "version": "1.0.0",
+  "description": "API for stock indo",
+  "type": "module",
+  "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fortytongorilla/fortytonstocks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fortytongorilla/fortytonstocks/issues"
+  },
+  "homepage": "https://github.com/fortytongorilla/fortytonstocks#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "node-fetch": "^3.2.10"
+  }
+}
