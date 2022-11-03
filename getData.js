@@ -5,6 +5,7 @@ export const stockCache = {};
 export const finalArr = [];
 let earningsCache = {};
 let stockObject = {}
+const crate = [];
 
 const StockTicker = function (ticker,pClose, todayOpen, dayRange, vol, avgVol, mrktCap, earnGrowPast, earnGrowCurr,earnGrowN5y, revGrow, peRatio, priceToSales,priceToBook,reportDate, epsCurrQuart, annRev, annProfit, profMargin) {
     this.ticker = ticker;
@@ -51,7 +52,7 @@ export const getData = async function(stock) {
         //     number: dataArr,
         // }
         finalArr.push(stockObject)
-        stockCache[stock] = stockObject
+        stockCache[stock] = stockObject;
         return finalArr;
     } catch (e) {
         console.log(`testbot getData`, e);
@@ -63,7 +64,6 @@ export const getDaily = async function(stock) {
         if (earningsCache[stock]) {
             return Promise.resolve(earningsCache[stock]);
         }
-        const crate = [];
         const priceHolder = [];
         const lables = [];
         const headers = [];
