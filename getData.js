@@ -1,10 +1,11 @@
 import fetch from "node-fetch";
 import cheerio from "cheerio";
 
-export const stockCache = {};
-export const finalArr = [];
+ const stockCache = {};
+ const getDataArr = [];
 let earningsCache = {};
-let stockObject = {}
+let stockObject = {};
+const dailyArr = [];
 
 const StockTicker = function (ticker,pClose, todayOpen, dayRange, vol, avgVol, mrktCap, earnGrowPast, earnGrowCurr,earnGrowN5y, revGrow, peRatio, priceToSales,priceToBook,reportDate, epsCurrQuart, annRev, annProfit, profMargin) {
     this.ticker = ticker;
@@ -35,7 +36,6 @@ export const getData = async function(stock) {
         if (stockCache[stock]) {
             return Promise.resolve(stockCache[stock])
         };
-        const finalArr = [];
         const headArr = [];
         const dataArr = [];
         const html = await fetch(`https://finance.yahoo.com/quote/${stock}/analysis?p=${stock}`)
@@ -50,8 +50,8 @@ export const getData = async function(stock) {
         //     headers: headArr,
         //     number: dataArr,
         // }
-        finalArr.push(stockObject)
-        // stockCache[stock] = stockObject
+        getDataArr.push(stockObject)
+        stockCache[stock] = stockObject
         return finalArr;
     } catch (e) {
         console.log(`testbot getData`, e);
