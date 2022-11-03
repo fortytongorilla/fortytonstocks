@@ -5,6 +5,7 @@ export const stockCache = {};
 export const finalArr = [];
 let earningsCache = {};
 let stockObject = {}
+const finalArr = [];
 
 const StockTicker = function (ticker,pClose, todayOpen, dayRange, vol, avgVol, mrktCap, earnGrowPast, earnGrowCurr,earnGrowN5y, revGrow, peRatio, priceToSales,priceToBook,reportDate, epsCurrQuart, annRev, annProfit, profMargin) {
     this.ticker = ticker;
@@ -35,7 +36,6 @@ export const getData = async function(stock) {
         if (stockCache[stock]) {
             return Promise.resolve(stockCache[stock])
         };
-        const finalArr = [];
         const headArr = [];
         const dataArr = [];
         const html = await fetch(`https://finance.yahoo.com/quote/${stock}/analysis?p=${stock}`)
