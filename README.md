@@ -1,2 +1,2 @@
 # fortytonstocks
-grab stock info
+get stock info
