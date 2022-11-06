@@ -1,2 +1,2 @@
 # fortytonstocks
-API for stock indo
+grab stock info
